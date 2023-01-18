@@ -1,0 +1,31 @@
+Week	Pages		Chapter
+
+1	581-618		15
+
+2	622-655		16	
+
+3	660-708		17
+
+4	716-756		18
+
+5	765-796		19
+
+6	800-841		20
+
+MS I	845-875		21
+
+MS II	882-903		22
+
+7  	907-916		23
+
+8	--		--
+
+9	--		--
+
+10	--		--
+
+11	--		--
+
+12	--		--
+
+Textbook - 'C How to Program (with an Introduction to C++) (8e), Deitel & Deitel
