@@ -1,0 +1,32 @@
+** OOP Major Project Plan Specifications **
+
+-------------------------------------------
+
+The principle purpose of my project is to create a two (human) player chess game. The players will be
+able to see the layout of the board as it appears before their next move, and will be able to input
+their moves using row and column notation (ie. to move a piece from A4 to C5, the player might enter
+something like '> A4 -> C5'). The program will initially display the board, pieces and relevant
+statistics in a basic ASCII character format, but if I am able to complete the primary mechanical
+aspects of the program withint the alloted time, I will endeavour to add some more advanced graphical
+functionality using the ncurses library. Finally, time permitting, I will attempt to create rudimentary
+computer opponent for human players to challenge. Also (time permitting again), I will attempt to vary
+the board layout, type of pieces and rule set to allow for variations in the game (ie. 10x10 boards,
+three dimensional boards, fairy pieces, non-standard rules).
+
+Goal summary:
+
+*Primary goal: create two (human) player chess game with basic graphical format
+*Secondary goal: add more advanced graphics to the program using the ncurses library
+* Tertiary goals:
+  - Create basic computer opponent
+  - Vary board topology, piece set and game rules to create non-standard game variations
+  
+Initial milestones:
+
+* Wednesday Week 9: Basic game program complete
+* Wednesday Week 10: Additional graphical capabilities included
+* Wednesday Week 11: Computer opponent and/or varations to the basic game added. Program complete.
+
+Wade Shiell, May 9, 2019.
+
+-------------------------------------------

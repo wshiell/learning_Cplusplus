@@ -1,0 +1,33 @@
+Classes:
+
+- Game
+  - Move
+- Board
+  - Square
+- Player (Abstract)
+  - Human
+  - Computer
+- PieceSet (Abstract)
+  - Piece (Abstract)
+    - King
+    - Queen
+    - Rook
+    - Bishop
+    - Knight
+    - Pawn
+
+- Display
+- Input
+- Output
+- Timer
+- Colour
+- ChessManager
+- GameState
+- Searchches
+
+Enumerations:
+
+- Colour
+- PieceType
+- Result
+- CheckStatus

@@ -1,0 +1,97 @@
+Chess program flow of execution
+
+- Program execution begins
+- Prompt : Main Menu
+  - Start new game
+  - Load game
+  - Statistics
+  - Game options
+  - Enter editing mode
+  - Help
+  - About
+  - Quit
+  - Start new game :
+    - One player?
+    - Two players?
+    - If one player :
+    - Enter difficulty level
+    - Confirm choices; begin game.
+  - Load game :
+    - Select game file to load
+    - Confirm choice; begin game
+  - Statistics :
+    - Show :
+      - Number of games played
+      - Time spent playing
+      - Etc.
+      - Prompt to return to main menu
+  - Game options :
+    - On/off : help mode (ie. Highlight squares player can move to,
+      which pieces are being attacked, which pieces are attacking)
+    - Other options?
+  - Enter editing mode :
+    - Set board grid size
+    - Set board dimension
+    - Set game variation (fair pieces, etc.)
+    - Set board colour (square colour, piece colour, etc.)
+    - Save settings prompt ; return to main menu
+  - Help :
+    - Displays information about which keys perform which
+      functions (ie. Pressing ‘R’ in-game prompts the player to
+      confirm whether they want to resign, etc)
+  - About :
+    - Displays general information about the program
+  - Quit :
+    - Prompt to confirm choice ; quit game
+
+- In game play : Game Menu
+  - Press key (which?) to access main menu
+  - Save game option :
+    - Enter name of saved game
+    - Confirm choice; return to game
+  - Inherit other options from main menu
+  - Note – certain options disabled in game (ie. Can’t change board
+    layout, game style, etc.)
+  - In-game display features :
+    - Title bar with program name
+    - Board (with pieces)
+    - Captured piece grid for either player
+    - Game file name
+    - Move number
+    - Player whose turn it it
+    - List of recent moves
+    - Prompt display for current move
+    - Display origin square (highlight square)
+    - Display destination square (highlight square)
+    - Display possible squares piece can move to (optional – in
+      settings? Easy mode?) Display enemy pieces being attacked
+      by chosen piece (optional – in settings? Easy mode?) Show
+      which pieces are attacking chosen piece (optional – in
+      settings? Easy mode?)
+    - Display data about piece chosen, square details, etc.
+    - Display prompt about which player to move – ie. ‘white to move’
+    - List total elapsed time
+    - List elapsed time per player (timer)
+    - Display prompt if player is in check
+    - Display prompt detailing last move if it results in pieces
+      being taken, casting, check, check mate, resignation, draw,
+      stalemate, etc.
+    - End of game – display stats for game?
+
+- Game play :
+  - Player 1 prompted for move – format :
+    -  ‘Enter move: X#-Y@’
+  - Program parses entered string to determine origin square and
+    destination square
+  - Prompts user to confirm choice
+  - Highlights chosen square and destination square, plus path to
+    square if relevant. Highlights pieces being taken, etc etc., after
+    user has entered choice – performed after user enters choice
+    and before user confirms choice
+  - Displays whether entered choice is invalid (instead of asking
+    user to confirm choice, prompts user to enter a valid choice).
+  - Displays move made by player, including relevant information
+    about pieces taken, actions performed, game outcomes.
+    Removed pieces from board if relevant
+  - When game is over, prompts player to make a choice about
+    whether to play again, load game, quit, etc.

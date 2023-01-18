@@ -1,0 +1,57 @@
+*** OOP Major Project Design & General Information ***
+
+Project Topic:
+
+	- Chess program
+
+Project Primary Goal:
+
+	- Design and implement a chess program for two human players.
+
+Project Supplementary Goals:
+
+	Supplementary Goal I.
+
+	- Create a basic graphical interface to display the board, pieces and basic information
+	  using the ncurses library
+
+	Supplementary Goal IIa.
+
+	- Alter the board topology so that it can take different forms
+	  * multiple dimensions (primarily three dimensions)
+	  * different shapes (circular board, hexagonal board)
+	  * cartesian board (ie. not restricted to grid squares)
+
+	Supplementary Goal IIb.
+
+	- Introduce 'fairy' pieces into the standard game, and alter the game such that
+	  new rules are introduced incorporating these new pieces
+	  
+	Supplementary Goal IIIa.
+
+	- Create a rudimentary computer player to challenge human players
+
+	Supplementary Goal IIIb.
+
+	- Alter program such that two computer players can play against each other
+	  
+Principal Classes:
+
+	- Game class
+	- Player class
+	  * Human player class
+	  * Computer player class
+	- Board class
+	  * Standard 2-D board class
+	  * 3-D board class
+	  * Other board classes
+	- Piece class
+	  * King class
+	  * Queen class
+	  * Rook class
+	  * Knight class
+	  * Bishop class
+	  * Pawn class
+	  * Fairy piece class
+	- Rule class (possibly not a unique class)
+	- Color class
