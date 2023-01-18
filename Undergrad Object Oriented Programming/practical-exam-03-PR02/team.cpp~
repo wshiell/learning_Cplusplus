@@ -1,0 +1,44 @@
+#include <iostream>
+#include "team.h"
+using namespace std;
+
+int current_players = 0;
+
+team::team()
+{
+
+}
+
+team::team(int max, string nombre)
+{
+  team_name = nombre;
+  max_players = max;
+  current_players++;
+}
+
+int team::get_max_players()
+{
+  return max_players;
+}
+
+player * team::get_roster()
+{
+  return roster;
+}
+
+bool team::add_player(player new_player)
+{
+  if (current_players < max_players) {
+    roster[current_players] = new_player;
+    current_players++;
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+team::~team()
+{
+  
+}

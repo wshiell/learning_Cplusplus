@@ -1,0 +1,15 @@
+//  *****************************************************************************
+//  *
+//  *    main-1-1.cpp -- Driver function for player objects
+//  *    Author: Wade Shiell
+//  *
+//  *****************************************************************************
+
+#include <iostream>
+#include "player.h"
+using namespace std;
+
+int main()
+{
+  player player1( 23, "Allan Burbridge" );
+}

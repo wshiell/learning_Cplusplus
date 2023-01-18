@@ -1,0 +1,62 @@
+//  *****************************************************************************
+//  *
+//  *    player.cpp -- Implementation file for player object
+//  *    Author: Wade Shiell
+//  *
+//  *****************************************************************************
+
+#include "player.h"
+using namespace std;
+
+int player::player_ID = 0; // Set initial number of players to zero
+
+int player::get_playerID()
+{
+  return player_ID;
+}
+
+player::player()
+  : jersey_number( 0 ), player_name( "" )
+
+{
+  player_ID++; // Increment number of players by one when a new player object is created
+}
+
+player::player( int jersey, string name )
+  : jersey_number( jersey ), player_name( name) // Initialise player object
+{
+  player_ID++; // Increment number of players by one when a new player object is created
+}
+
+player::~player()
+{
+  player_ID--; // Decrement number of players by one when a new player object is destructed
+}
+
+// Function which sets the name of the player
+
+void player::set_name( string name )
+{
+  player_name = name;
+}
+
+// Function which returns the name of the player 
+
+string player::get_name()
+{
+  return player_name;
+}
+
+// Function which sets the jersey number of the player
+
+void player::set_jersey_number( int jersey )
+{
+  jersey_number = jersey;
+}
+
+// Function which returns the jersey number of the player
+
+int player::get_jersey_number()
+{
+  return jersey_number;
+}

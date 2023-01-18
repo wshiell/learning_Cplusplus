@@ -1,0 +1,33 @@
+//  *****************************************************************************
+//  *
+//  *    player.h -- Header file for player object
+//  *    Author: Wade Shiell
+//  *
+//  *****************************************************************************
+
+#ifndef PLAYER_H
+#define PLAYER_H
+
+#include <string>
+
+class player
+{
+ public:
+  static int player_ID; // Records total number of players at a given moment
+  static int get_playerID(); // Returns total number of players at a given moment
+
+  player();
+  player( int = 0, std::string = ""); // User-defined constructor with default values
+  ~player();
+
+  void set_name( std::string ); // Player name set function
+  std::string get_name(); // Player name get function
+  void set_jersey_number( int ); // Player jersey number set function
+  int get_jersey_number(); // Player jersey number get function
+
+ private:
+  std::string player_name;
+  int jersey_number;
+};
+
+#endif

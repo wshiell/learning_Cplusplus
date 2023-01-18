@@ -1,0 +1,37 @@
+//  *****************************************************************************
+//  *
+//  *    team.h -- Header file for team object
+//  *    Author: Wade Shiell
+//  *
+//  *****************************************************************************
+
+#ifndef TEAM_H
+#define TEAM_H
+
+#include <string>
+#include "player.h"
+
+class team
+{
+ public:
+  
+  static int team_ID; // Records the number of teams instantiated
+  static int get_teamID(); // Returns the number of teams instantiated
+
+  team();
+  team( int, const std::string ); // User-defined constructor with default values
+  ~team();
+
+  int get_current_number_of_players(); // Returns current number of players on the team
+  void set_name( const std::string ); // Sets the name of the team
+  std::string get_name() const; // Returns the name of the team
+  player * get_roster() const; // Returns current roster of players
+  bool add_player( const player ); // Adds a new player to the team (if room)
+
+ private:
+  int max_size; // Maximum size of the team
+  std::string team_name; // Team name
+  player roster[30];
+};
+
+#endif
