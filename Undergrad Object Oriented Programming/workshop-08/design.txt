@@ -1,0 +1,130 @@
+** OOP Major Project Design Specifications **
+
+-------------------------------------------
+
+Given the object oriented nature of the project, I will attempt to create my program initially by
+writing the following classes:
+
+- Game class
+- Board class
+- Square class
+- Player class
+  - Human player
+  - Computer player
+- Piece class
+  - King
+  - Queen
+  - Rook
+  - Knight
+  - Bishop
+  - Pawn
+
+The following may or not be written as seperate classes:
+
+- Rule class
+- Colour class
+
+Planned class relationships:
+
+  * Game 'has-a' Board; Board 'has' Players; Board 'has' Squares; Player 'has' Pieces; Game 'has' Rules
+  * Human/Computer Players 'are' Players
+  * King/Queen/etc. 'are' Pieces
+  * Board 'has' Colour
+
+I have written a basic use case diagram to describe the desired functionality from the perspective of
+a human player, and will be using this as my primary design guide. I am also working on activity diagrams
+to further break down the functionality in each use case, though given my unfamiliarity with UML I may
+not focus too heavily on these. Class diagrams will also (hopefully) be used to describe the attributes
+and behaviours of the various classes, and the ways in which they associate with one another. Again, my
+unfamiliarity with UML may mean that I don't focus on these diagrams too heavily, but I am eager to
+explore their usefulness in aiding program design.
+
+I am not sure yet precisely how the various classes will interact with one another: the form I envision
+my program taking is essentially one of 'loading' objects with other objects as members. For example,
+when the program begins, a Game object will be instantiated and will cause objects of various other
+classes to be instantiated and 'loaded' as it's members. A Game object will contain a Board object as a
+member, and two Player objects will be 'loaded' either onto the Board object or the Game object (I am
+not sure what form it will take yet). Finally, the board will have 64 Piece objects assigned as members,
+and the Player objects will make function calls to manipulate the Pieces as is approriate.
+The precise relationships between the classes will become clearer with time, but I think the above outline
+is a reasonable plan to start with.
+
+Below is a proposed summary of how I hope my program will satisfy the various project requirements:
+
+- Memory alloction from the stack and the heap:
+  - The board and piece sets will likely be represented as vectors or arrays, and as pieces are created
+    memory will be acquired from the heap in order to instantiate objects as required. I do not plan on
+    destructing any piece once it is created, at least not until the end of a game, so once a piece is
+    captured I will move it to a 'jail' array, which will then exist until program termination
+  - Strings will be used for naming various objects throughout the program
+  - Each piece, as well as the board, players and game will exist as an instantiated object of the
+    relevant class
+
+- User input and Output:
+  - The user (player) will input their moves using cin and/or getline
+  - The board, pieces and various statistics will be output to the screen using cout; I will use
+    basic ASCII graphics to display these elements, and hopefully will use the ncurses library as well
+
+- OOP and design:
+  - The specific chess pieces will be represented as derived classes of the base class 'Piece'. This will
+    satisfy the assignment requirments to incorporate inheritance
+  - When the various pieces are moved, this will likely be accomplished using some sort of 'move()'
+    function called from the driver file. I will use polymorphic teqchniques to make function calls
+    using base-class (ie 'Piece') pointers containing the addresses to derived-class objects.
+  - Because instantiating a 'Piece' object does not make sense in the context of the chess game, I will
+    declare the class 'Piece' to be abstract. Consequently, the classes representing the actual chess
+    pieces will be required to implement one or more of the pure virtual functions declared in the
+    'Piece' base class. (I may also do something similar for the 'Player' class, making it an abstract
+    base class for the 'Human Player' and 'Computer Player' classes.)
+
+- Testing
+  - Pieces must make valid moves, which is to say that that cannot move 'off the board', they cannot
+    move on top of another piece (unless they are legally capturing that piece), and the pieces must
+    move in a manner appropriate for their type (ie. a rook cannot move diagonally). I intend to
+    test that all of these possibilities do not occur to the best of my ability.
+  - If I decide to incorporate statstics into my program (ie. number of pieces captured, number of games
+    won, etc.) it will obviously be important that the displayed information be valid. I will test to
+    ensure that information displayed *is* valid, and aim to prevent erroneous data being printed
+  - Changes made to the program will principally take the form of new classes being added. The idea is
+    to begin with a 'stripped down' versioj of the game - perhaps no more than the board - and
+    incrementally add elements to it: players, pieces, rules, colour, etc. When each addtional feature
+    is introduced, there exists the potential for error to arise. I plan on testing my program to
+    ensure that, with each addition, the program continues to execute in a manner identical to how it
+    previously ran, with the new functionality included. This will satisfy the regression testing
+    requirement (though the specifics still need to be determined).
+
+There will doubtless be other areas of my program which will explore the above concepts as well, but
+those things I have specifically mentioned will ensure the relevant requirements are met in full.
+
+Potential Additional Features:
+
+- I will also attempt to use overloaded operators where appropriate, ie. to print objects
+  (cout << object for example)
+- While I realise it is installed in the laboratory computers, my understanding is that the ncurses
+  library is not part of the C++ standard, so my including it (or attempting to) will be provide
+  additional functionality beyond the scope of the project requirements.
+- I will attempt to use templates and class templates, though I have not as yet familiarised myself with
+  this particular aspect of C++. Consequently, this functionality may not make it into the final program.
+- Similarly, if time permits, I will also attempt to add some manner of error handling to my program, in
+  the form of throw statments and try/catch statements. 
+- I will also be using a Makefile to streamline the compilation of my program. In its final form, I
+  suspect the program will have between 15-20 classes (including derived classes), and I imagine that
+  compile time will be quite high if it is necessary to compile every file every time.
+
+I am optimistic that I will be able to create a working two (human) player chess game, thoroughly tested,
+by the week 11 deadline. I also hope I will be able to incorporate many of the additional features into my
+program, but which features will be determined by the available time and the difficulty in associated
+with each supplementary goal.
+
+Wade Shiell, May 9, 2019.
+
+nb. Initially, I made the assumption that we were allowed to work on our projects individually, so I
+    began planning before the mid semester break with this in mind. Recent forum posts and announcments
+    have led me to believe that we are required to work as part of a group. I am choosing not to do this,
+    partially because I have made the plans detailed above with the idea of working alone, and so it
+    would be a major disadvantage to me to now join a group. More importantly, I consider it a
+    personal challenge to design and implement a program of this degree of complexity by myself, so
+    whether I am penalised marks for not being part of a group matters less to me than does the successful
+    solo completion of this project.
+
+-------------------------------------------

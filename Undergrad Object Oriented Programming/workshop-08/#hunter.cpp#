@@ -1,0 +1,42 @@
+//  *****************************************************************************
+//  *
+//  *    hunter.cpp -- 
+//  *    Author: Wade Shiell
+//  *
+//  *****************************************************************************
+
+using namespace std;
+
+int hunter::hunter_ID = 0;
+int hunter::get_hunter()
+{
+  return hunter_ID;
+}
+
+hunter::hunter( const string type )
+  : animal::set_species( type )
+{
+  hunter_ID++;  
+}
+
+void hunter::record_kill( const string pwned )
+{
+  
+}
+
+int hunter::numberOfKills() const
+{
+  return sizeof( get_kills );
+}
+
+hunter::~hunter()
+{
+  hunter_ID--;
+}
+
+
+
+
+
+
+

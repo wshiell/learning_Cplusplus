@@ -1,0 +1,4 @@
+To keep track of the changes made to projects, in order to help you or others correct changes or make improvements as necessary.
+It should be concise, relevant and clear, with no unnecessary hyperbole.
+At least once per work session, preferably more often (perhaps every 30-60 minutes)
+False. Some files can be reconstructed from those you commit, depending on the nature of the files.

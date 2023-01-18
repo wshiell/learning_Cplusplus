@@ -1,0 +1,29 @@
+//  *****************************************************************************
+//  *
+//  *    hunter.h -- 
+//  *    Author: Wade Shiell
+//  *
+//  *****************************************************************************
+
+#ifndef HUNTER_H
+#define HUNTER_H
+
+#include <vector>
+#include <string>
+
+class hunter : public animal
+{
+ public:
+  static int hunter_ID;
+  static int get_hunter();
+  hunter( const std::string = "" );
+  void record_kill( const std::string );
+  int numberOfKills();
+  ~hunter();
+ private:
+  std::string kill;
+  //  std::string * get_kills();
+  vector< std::string > get_kills();  
+};
+
+#endif

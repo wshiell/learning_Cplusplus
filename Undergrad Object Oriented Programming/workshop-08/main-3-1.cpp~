@@ -1,0 +1,37 @@
+//  *****************************************************************************
+//  *
+//  *    main-3-1.cpp -- Driver for problem-3-1
+//  *    Author: Wade Shiell
+//  *
+//  *****************************************************************************
+
+#include <iostream>
+#include "animal.h"
+#include "hunter.h"
+#include "vegie.h"
+using namespace std;
+
+int main()
+{
+  animal *animalListPtr[5];
+  hunter **hunterListPtr = new hunter*[3];
+  vegie **vegieListPtr = new vegie*[2];
+  
+  for ( size_t i = 0; i < 3; i++ ) {
+    hunterListPtr[i] = new hunter( "" );
+    animalListPtr[i] = hunterListPtr[i];
+  }
+
+  // for ( size_t i = 0; i < 2; i++ ) {
+  //   vegieListPtr[i] = new vegie( "" );
+  //   animalListPtr[i] = vegieListPtr[i];
+  // }
+
+  for ( size_t i = 0; i < 5; i++ ) {
+    cout << animalListPtr[i]->get_species() << endl;
+  }
+
+
+  delete[] hunterListPtr;
+  delete[] vegieListPtr;
+}
